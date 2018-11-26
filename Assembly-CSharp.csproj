@@ -61,9 +61,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Recorder.cs" />
+    <Compile Include="Assets\RockVR\Common\Scripts\EventDelegate.cs" />
+    <Compile Include="Assets\RockVR\Common\Scripts\FPSDisplay.cs" />
+    <Compile Include="Assets\RockVR\Common\Scripts\Platform.cs" />
+    <Compile Include="Assets\RockVR\Common\Scripts\Process.cs" />
+    <Compile Include="Assets\RockVR\Common\Scripts\Singleton.cs" />
+    <Compile Include="Assets\RockVR\Video\Demo\Scripts\AutoRotate.cs" />
+    <Compile Include="Assets\RockVR\Video\Demo\Scripts\VideoCaptureUI.cs" />
+    <Compile Include="Assets\RockVR\Video\Scripts\AudioCapture.cs" />
+    <Compile Include="Assets\RockVR\Video\Scripts\Base\VideoCaptureBase.cs" />
+    <Compile Include="Assets\RockVR\Video\Scripts\Base\VideoCaptureCtrlBase.cs" />
+    <Compile Include="Assets\RockVR\Video\Scripts\Config.cs" />
+    <Compile Include="Assets\RockVR\Video\Scripts\Screenshot.cs" />
+    <Compile Include="Assets\RockVR\Video\Scripts\Utils\Utils.cs" />
+    <Compile Include="Assets\RockVR\Video\Scripts\VideoCapture.cs" />
+    <Compile Include="Assets\RockVR\Video\Scripts\VideoCaptureCtrl.cs" />
+    <Compile Include="Assets\RockVR\Video\Scripts\VideoPlayer.cs" />
+    <Compile Include="Assets\Scripts\buttonScript.cs" />
     <Compile Include="Assets\Scripts\moveBox.cs" />
     <Compile Include="Assets\Scripts\PlayMovieTextureOnUI.cs" />
     <Compile Include="Assets\Scripts\pointerCounter.cs" />
+    <None Include="Assets\RockVR\Video\Shaders\DownsamplePro.shader" />
+    <None Include="Assets\RockVR\Video\Shaders\Cubemap2Equirectangular.shader" />
+    <None Include="Assets\RockVR\Video\Shaders\CubemapDisplayPro.shader" />
+    <None Include="Assets\RockVR\Video\Shaders\Cubemap2EquirectangularPro.shader" />
+    <None Include="Assets\RockVR\Video\Shaders\CubemapToCylindrical.shader" />
+    <None Include="Assets\RockVR\Video\Shaders\FlippingTexture.shader" />
+    <None Include="Assets\RockVR\Video\Shaders\Stereoscopic.shader" />
+    <None Include="Assets\RockVR\Video\Shaders\CopyReverse.shader" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/unityProjects/P1_app/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
