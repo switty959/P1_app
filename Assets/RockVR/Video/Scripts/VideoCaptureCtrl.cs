@@ -11,6 +11,8 @@ namespace RockVR.Video
     /// Work with <c>VideoCapture</c> and <c>AudioCapture</c> component to generate gameplay
     /// videos.
     /// </summary>
+    /// 
+
     public class VideoCaptureCtrl : VideoCaptureCtrlBase
     {
         /// <summary>
@@ -67,6 +69,9 @@ namespace RockVR.Video
         /// <summary>
         /// Initialize the attributes of the capture session and start capture.
         /// </summary>
+        /// 
+        public pointerCounter pointChecker; 
+
         public override void StartCapture()
         {
             if (status != StatusType.NOT_START &&
@@ -155,11 +160,12 @@ namespace RockVR.Video
         /// when the video file is complete, register <c>OnComplete</c> delegate.
         /// </summary>
         public override void StopCapture()
-        {
+        { 
             if (status != StatusType.STARTED && status != StatusType.PAUSED)
             {
                 Debug.LogWarning("[VideoCaptureCtrl::StopCapture] capture session " +
                                  "not start yet!");
+                
                 return;
             }
             foreach (VideoCapture videoCapture in videoCaptures)
@@ -168,7 +174,7 @@ namespace RockVR.Video
                 {
                     continue;
                 }
-                if (videoCapture.status != StatusType.STARTED && status != StatusType.PAUSED)
+                if (videoCapture.status != StatusType.STARTED && status != StatusType.PAUSED )
                 {
                     if (IsCaptureAudio())
                     {

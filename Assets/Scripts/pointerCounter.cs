@@ -3,53 +3,60 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class pointerCounter : MonoBehaviour {
-    public int points = -1;
-    public int numOfAction = 2;
-    public GameObject[] panels = new GameObject[2];
-    public moveBox movingbox;
-    string[] textForExercise = new string[3];
-    public bool exerciseStarted, exerciseFinish, exercisePaused = false;
-    void Awake()
+    public class pointerCounter : MonoBehaviour
     {
-        textForExercise[0] = "do this exercise " + numOfAction + " times \n" +
-                             "hover your hand on the red box to start the exercise";
-        textForExercise[1] = "Well done!";
-        textForExercise[2] = "keep it up";
-        panels[1].SetActive(false);
-        
-    }
+        public int points = -1;
+        public int numOfAction = 2;
+        public GameObject[] panels = new GameObject[2];
+        public moveBox movingbox;
 
-    void Update()
-    {
-        panels[1].GetComponentInChildren<Text>().text = points + " / " + numOfAction;
-        panels[0].GetComponentInChildren<Text>().text = textForExercise[0];
-        if (exerciseStarted)
+        string[] textForExercise = new string[3];
+        public bool exerciseStarted, exerciseFinish, exercisePaused = false;
+        void Awake()
         {
-            movingbox.moveTheBox();
-            panels[1].SetActive(true);
-            panels[0].SetActive(false);
+            textForExercise[0] = "do this exercise " + numOfAction + " times \n" +
+                                 "hover your hand on the red box to start the exercise";
+            textForExercise[1] = "Well done!";
+            textForExercise[2] = "keep it up";
+            panels[1].SetActive(false);
+
         }
 
-        if (points == numOfAction)
+        void Update()
         {
-            changeText();
-            movingbox.speed = 0;
-        }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            exerciseStarted = true;
-        }
-    }
+            panels[1].GetComponentInChildren<Text>().text = points + " / " + numOfAction;
+            panels[0].GetComponentInChildren<Text>().text = textForExercise[0];
+            if (exerciseStarted)
+            {
+                movingbox.moveTheBox();
+                panels[1].SetActive(true);
+                panels[0].SetActive(false);
+            }
 
-    public void addPoint(int addition)
-    {
-        points++;
-    }
-    public void changeText()
-    {
-        panels[1].SetActive(false);
-        panels[0].SetActive(true);
-        panels[0].GetComponentInChildren<Text>().text = textForExercise[1];
-    }
+            if (points == numOfAction)
+            {
+                changeText();
+                movingbox.speed = 0;
+                exerciseFinish = true;
+            }
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                exerciseStarted = true;
+            }
+            if (exerciseFinish)
+            {
+            
+            }
+        }
+
+        public void addPoint(int addition)
+        {
+            points++;
+        }
+        public void changeText()
+        {
+            panels[1].SetActive(false);
+            panels[0].SetActive(true);
+            panels[0].GetComponentInChildren<Text>().text = textForExercise[1];
+        }
 }

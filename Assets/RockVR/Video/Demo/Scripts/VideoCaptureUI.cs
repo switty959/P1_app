@@ -6,6 +6,9 @@ namespace RockVR.Video.Demo
     public class VideoCaptureUI : MonoBehaviour
     {
         private bool isPlayVideo = false;
+        public int[] pos = new int[4];
+        public buttonScript buttons;
+        public pointerCounter pointChecker;
         private void Awake()
         {
             Application.runInBackground = true;
@@ -16,69 +19,32 @@ namespace RockVR.Video.Demo
         {
             if (VideoCaptureCtrl.instance.status == VideoCaptureCtrl.StatusType.NOT_START)
             {
-                if (GUI.Button(new Rect(10, Screen.height - 60, 150, 50), "Start Capture"))
+                if (GUI.Button(new Rect(pos[0], pos[1], pos[2], pos[3]), "Start Capture"))
                 {
                     VideoCaptureCtrl.instance.StartCapture();
+                    buttons.panels[0].SetActive(true);
+                    buttons.panels[1].SetActive(false);
                 }
             }
-            else if (VideoCaptureCtrl.instance.status == VideoCaptureCtrl.StatusType.STARTED)
+            else if (VideoCaptureCtrl.instance.status == VideoCaptureCtrl.StatusType.STARTED )
             {
-                if (GUI.Button(new Rect(10, Screen.height - 60, 150, 50), "Stop Capture"))
+                if (GUI.Button(new Rect(pos[0], pos[1], pos[2], pos[3]), "Stop Capture"))
                 {
                     VideoCaptureCtrl.instance.StopCapture();
                 }
-                if (GUI.Button(new Rect(180, Screen.height - 60, 150, 50), "Pause Capture"))
-                {
-                    VideoCaptureCtrl.instance.ToggleCapture();
-                }
-            }
-            else if (VideoCaptureCtrl.instance.status == VideoCaptureCtrl.StatusType.PAUSED)
-            {
-                if (GUI.Button(new Rect(10, Screen.height - 60, 150, 50), "Stop Capture"))
+                if (pointChecker.exerciseFinish)
                 {
                     VideoCaptureCtrl.instance.StopCapture();
-                }
-                if (GUI.Button(new Rect(180, Screen.height - 60, 150, 50), "Continue Capture"))
-                {
-                    VideoCaptureCtrl.instance.ToggleCapture();
                 }
             }
             else if (VideoCaptureCtrl.instance.status == VideoCaptureCtrl.StatusType.STOPPED)
             {
-                if (GUI.Button(new Rect(10, Screen.height - 60, 150, 50), "Processing"))
+                if (GUI.Button(new Rect(pos[0], pos[1], pos[2], pos[3]), "Processing"))
                 {
                     // Waiting processing end.
                 }
             }
-            else if (VideoCaptureCtrl.instance.status == VideoCaptureCtrl.StatusType.FINISH)
-            {
-                if (!isPlayVideo)
-                {
-                    if (GUI.Button(new Rect(10, Screen.height - 60, 150, 50), "View Video"))
-                    {
-#if UNITY_5_6_OR_NEWER
-                        // Set root folder.
-                        isPlayVideo = true;
-                        VideoPlayer.instance.SetRootFolder();
-                        // Play capture video.
-                        VideoPlayer.instance.PlayVideo();
-                    }
-                }
-                else
-                {
-                    if (GUI.Button(new Rect(10, Screen.height - 60, 150, 50), "Next Video"))
-                    {
-                        // Turn to next video.
-                        VideoPlayer.instance.NextVideo();
-                        // Play capture video.
-                        VideoPlayer.instance.PlayVideo();
-#else
-                        // Open video save directory.
-                        Process.Start(PathConfig.saveFolder);
-#endif
-                    }
-                }
-            }
+           
         }
     }
 }
