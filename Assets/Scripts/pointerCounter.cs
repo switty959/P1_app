@@ -47,7 +47,8 @@ using UnityEngine.UI;
             {
             
             }
-        }
+       
+    }
 
         public void addPoint(int addition)
         {

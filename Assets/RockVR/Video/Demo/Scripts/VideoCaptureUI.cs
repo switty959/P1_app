@@ -5,14 +5,12 @@ namespace RockVR.Video.Demo
 {
     public class VideoCaptureUI : MonoBehaviour
     {
-        private bool isPlayVideo = false;
         public int[] pos = new int[4];
         public buttonScript buttons;
         public pointerCounter pointChecker;
         private void Awake()
         {
             Application.runInBackground = true;
-            isPlayVideo = false;
         }
 
         private void OnGUI()

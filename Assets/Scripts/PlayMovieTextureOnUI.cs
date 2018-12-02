@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+//https://docs.unity3d.com/ScriptReference/WebCamTexture.Play.html reference link
 
 public class PlayMovieTextureOnUI : MonoBehaviour
 {
