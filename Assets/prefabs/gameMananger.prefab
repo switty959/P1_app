@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1206337401237094}
+  m_IsPrefabAsset: 1
+--- !u!1 &1206337401237094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 224916364723644396}
+  - component: {fileID: 114580824509401984}
+  - component: {fileID: 114843117228336324}
+  - component: {fileID: 114873051953329904}
+  - component: {fileID: 114305683124286054}
+  m_Layer: 5
+  m_Name: gameMananger
+  m_TagString: gamemananger
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &114305683124286054
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1206337401237094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98250c22e508d744fa5da26b9733529f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0000000001000000
+--- !u!114 &114580824509401984
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1206337401237094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d16a64339576ca944aa080d73d72996c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: -1
+  numOfAction: 2
+  currentSpeed: 0
+  panels: []
+  movingbox: {fileID: 0}
+  rightarm: {fileID: 0}
+  animationSpeed: 0
+  animationCurrentSpeed: 0
+  exerciseStarted: 0
+  exerciseFinish: 0
+  exercisePaused: 0
+  recordingStarted: 0
+--- !u!114 &114843117228336324
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1206337401237094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1301bf7b3e97fa54b8cb4c0774e04b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttons: []
+  pointcounter: {fileID: 114580824509401984}
+  panels: []
+  pages: []
+--- !u!114 &114873051953329904
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1206337401237094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 520d6f313f518de4790407c21e4e6122, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!224 &224916364723644396
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1206337401237094}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}

@@ -7,11 +7,22 @@ using UnityEngine.UI;
 public class PlayMovieTextureOnUI : MonoBehaviour
 {
     public RawImage rawimage;
+    public WebCamTexture webcamTexture;
+    public Texture texture;
     void Start()
     {
-        WebCamTexture webcamTexture = new WebCamTexture();
+        webcamTexture = new WebCamTexture();
         rawimage.texture = webcamTexture;
         rawimage.material.mainTexture = webcamTexture;
+        webcamTexture.Play();
+    }
+    public void stopRenderWebcam()
+    {
+        webcamTexture.Stop();
+        rawimage.material.mainTexture = texture;
+    }
+    public void startRenderWebcam()
+    {
         webcamTexture.Play();
     }
 }

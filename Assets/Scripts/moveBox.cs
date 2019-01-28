@@ -6,8 +6,8 @@ public class moveBox : MonoBehaviour {
 
     public int[] xpos = {30,720};
     public int[] ypos = { -30, -700 };
-    public int maxSpeed = 5;
-    public int speed;
+    public float maxSpeed = 2.5f;
+    public float speed;
     int point = 1;
     public pointerCounter pointcounter;
     RectTransform rectbox;
